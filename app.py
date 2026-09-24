@@ -225,7 +225,7 @@ async def document_handler(message: types.Message) -> None:
 
 # --- Запуск бота в отдельном потоке ---
 def run_bot():
-    asyncio.run(dp.start_polling(bot))
+    asyncio.run(dp.start_polling(bot, handle_signals=False))
 
 def start_bot_thread():
     bot_thread = Thread(target=run_bot)
